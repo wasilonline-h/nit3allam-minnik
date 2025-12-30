@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حملة "نتعلم منك" - الخطة الاستراتيجية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .slide {
+            display: none;
+            min-height: 100vh;
+            width: 100%;
+            padding: 2rem 1rem;
+            animation: fadeIn 0.5s ease-in-out;
+            position: relative;
+            padding-bottom: 6rem; /* Space for nav buttons on mobile */
+        }
+        .active-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        @media (max-width: 768px) {
+            .active-slide {
+                justify-content: flex-start;
+                padding-top: 5rem;
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .dark ::-webkit-scrollbar-thumb { background: #475569; }
+
+        /* Card Hover Effects */
+        .lesson-card {
+            transition: transform 0.3s;
+        }
+        .lesson-card:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Image Styling */
+        .profile-img {
+            object-fit: cover;
+            border: 4px solid rgba(251, 191, 36, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-50 antialiased overflow-x-hidden">
+
+    <!-- Navbar / Header -->
+    <div class="fixed top-0 w-full p-4 flex justify-between items-center z-50 bg-white/80 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors">
+        <div class="flex items-center gap-3">
+             <!-- Small Profile Image in Header instead of Logo -->
+             <img src="nabil.png" onerror="this.style.display='none'" class="h-10 w-10 rounded-full object-cover border-2 border-gold-400/30" alt="Nabil">
+             <div class="text-lg md:text-xl font-bold text-slate-800 dark:text-gold-400">
+                وثائقي: <span class="hidden md:inline">نتعلم منك</span>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <div class="text-xs md:text-sm text-slate-500 dark:text-slate-400 font-mono" id="slide-counter">1 / 9</div>
+            
+            <!-- Dark Mode Toggle Button -->
+            <button onclick="toggleTheme()" class="p-2 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-yellow-400 hover:scale-110 transition shadow-sm">
+                <!-- Sun Icon -->
+                <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <!-- Moon Icon -->
+                <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Slide 1: Main Title -->
+    <div class="slide active-slide items-center text-center" id="slide-1">
+        <div class="max-w-4xl w-full mx-auto relative px-4">
+            <!-- Decorative Blobs (Visible mainly in Dark Mode) -->
+            <div class="absolute -top-20 -right-20 w-40 md:w-64 h-40 md:h-64 bg-yellow-500/20 rounded-full blur-3xl dark:opacity-100 opacity-50"></div>
+            <div class="absolute -bottom-20 -left-20 w-40 md:w-64 h-40 md:h-64 bg-blue-500/20 rounded-full blur-3xl dark:opacity-100 opacity-50"></div>
+
+            <div class="mb-8 md:mb-12 flex flex-col md:flex-row justify-center items-center md:items-end gap-6 relative z-10">
+                <!-- Person Image -->
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gold-400 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                    <img src="nabil.png" alt="Nabil" class="profile-img w-40 h-40 md:w-56 md:h-56 rounded-full shadow-2xl relative z-10 bg-slate-200 dark:bg-slate-800" onerror="this.src='https://via.placeholder.com/200?text=Photo'">
+                </div>
+                
+                <!-- Business Logo -->
+                <div class="md:mb-2">
+                    <img src="logo.png" alt="Logo" class="w-24 h-24 md:w-32 md:h-32 rounded-lg bg-white/80 dark:bg-white/5 p-2 backdrop-blur-sm border border-slate-200 dark:border-white/10 shadow-xl object-contain" onerror="this.src='https://via.placeholder.com/150?text=Logo'">
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-black mb-3 leading-tight text-slate-800 dark:text-white tracking-tight">نَتَعَلَّمُ مِنْك</h1>
+            <p class="text-xl md:text-2xl text-gold-600 dark:text-gold-400 font-light mb-8 tracking-widest">مدرسة الحياة.. في ساعتين</p>
+            
+            <div class="bg-white/60 dark:bg-slate-800/50 p-3 md:p-4 rounded-lg inline-block border border-slate-200 dark:border-slate-700 backdrop-blur shadow-sm">
+                <p class="text-sm md:text-lg text-slate-600 dark:text-gray-300 font-medium">الكويت • الأردن • مصر</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: The Philosophy Shift -->
+    <div class="slide" id="slide-2">
+        <div class="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-slate-800 dark:text-gold-400">فلسفة الحملة: "المعلم والمتعلم"</h2>
+                <p class="text-base md:text-lg leading-loose mb-6 text-slate-600 dark:text-gray-300">
+                    الاسم <strong>"نتعلم منك"</strong> يفرض علينا تغيير النبرة. نحن لا نروج لـ "فيلم" بل نروج لـ "منهج حياة".
+                    الشخصية هنا ليست "بطلاً خارقاً" بل "معلم" مر بتجارب قاسية ويقدم خلاصة هذه التجربة.
+                </p>
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-r-lg border-r-4 border-gold-500 shadow-md">
+                    <h4 class="font-bold text-slate-800 dark:text-white">الرسالة الأساسية:</h4>
+                    <p class="text-sm text-slate-600 dark:text-gray-400 mt-1">"نتعلم منك.. كيف نربح العالم، ونتعلم منك.. ألا نخسر أنفسنا."</p>
+                </div>
+            </div>
+            
+            <div class="order-1 md:order-2 bg-slate-100 dark:bg-gradient-to-br dark:from-slate-800 dark:to-slate-900 p-6 md:p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg relative overflow-hidden">
+                <!-- Watermark Logo -->
+                <img src="logo.png" class="absolute -bottom-10 -left-10 w-32 md:w-48 opacity-10 rotate-12" alt="">
+                
+                <h3 class="text-xl md:text-2xl font-bold mb-6 text-center text-slate-800 dark:text-white">محاور "التعلم" الثلاثة</h3>
+                <ul class="space-y-4 md:space-y-6 relative z-10">
+                    <li class="flex items-start gap-4">
+                        <div class="bg-green-100 dark:bg-green-500/20 p-2 md:p-3 rounded-lg text-green-600 dark:text-green-400 font-bold">1</div>
+                        <div>
+                            <strong class="text-lg md:text-xl block text-green-700 dark:text-green-400">درس البزنس</strong>
+                            <span class="text-xs md:text-sm text-slate-600 dark:text-gray-400">كيف تبني إمبراطورية من الصفر في الغربة؟</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="bg-red-100 dark:bg-red-500/20 p-2 md:p-3 rounded-lg text-red-600 dark:text-red-400 font-bold">2</div>
+                        <div>
+                            <strong class="text-lg md:text-xl block text-red-700 dark:text-red-400">درس العائلة</strong>
+                            <span class="text-xs md:text-sm text-slate-600 dark:text-gray-400">ما هو ثمن الانشغال؟ (الجانب المؤلم).</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="bg-blue-100 dark:bg-blue-500/20 p-2 md:p-3 rounded-lg text-blue-600 dark:text-blue-400 font-bold">3</div>
+                        <div>
+                            <strong class="text-lg md:text-xl block text-blue-700 dark:text-blue-400">درس الحديث</strong>
+                            <span class="text-xs md:text-sm text-slate-600 dark:text-gray-400">الكاريزما، فن التفاوض، وقوة الكلمة.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Influencer Campaign (The Students) -->
+    <div class="slide" id="slide-3">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-800 dark:text-gold-400 text-center">حملة المؤثرين: "أنا تعلمت منك..."</h2>
+        <p class="text-center text-slate-500 dark:text-gray-400 mb-8 max-w-3xl mx-auto text-sm md:text-base">
+            لن نطلب من المؤثرين (Micro & Medium) مراجعة الفيلم فنياً. سنطلب منهم مشاركة "درس واحد" تعلموه من القصة.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            <!-- Card 1 -->
+            <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-gold-500 transition shadow-lg dark:shadow-none">
+                <div class="h-2 bg-blue-500"></div>
+                <div class="p-6">
+                    <h3 class="text-lg md:text-xl font-bold text-slate-800 dark:text-white mb-2">فئة رواد الأعمال</h3>
+                    <p class="text-xs text-blue-600 dark:text-blue-400 mb-4 font-mono font-bold">LINKEDIN & TWITTER</p>
+                    <div class="bg-slate-50 dark:bg-slate-900 p-3 rounded text-sm italic text-slate-600 dark:text-gray-300 mb-4 border dark:border-0 border-slate-100">
+                        "تابعت وثائقي #نتعلم_منك.. الدرس اللي هزني: الشراكة الحقيقية مش بالعقود، بالنفوس."
+                    </div>
+                    <p class="text-xs text-slate-400 dark:text-gray-500">الهدف: نشر الحكمة المهنية.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:border-red-500 dark:hover:border-gold-500 transition shadow-lg dark:shadow-none">
+                <div class="h-2 bg-red-500"></div>
+                <div class="p-6">
+                    <h3 class="text-lg md:text-xl font-bold text-slate-800 dark:text-white mb-2">فئة العلاقات/العائلة</h3>
+                    <p class="text-xs text-red-600 dark:text-red-400 mb-4 font-mono font-bold">INSTAGRAM & TIKTOK</p>
+                    <div class="bg-slate-50 dark:bg-slate-900 p-3 rounded text-sm italic text-slate-600 dark:text-gray-300 mb-4 border dark:border-0 border-slate-100">
+                        "بكيت وأنا بشوف قصته مع ولده. #نتعلم_منك إن الفلوس ما تشتري الوقت اللي راح."
+                    </div>
+                    <p class="text-xs text-slate-400 dark:text-gray-500">الهدف: إثارة العاطفة (Viral Emotion).</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:border-yellow-500 dark:hover:border-gold-500 transition shadow-lg dark:shadow-none">
+                <div class="h-2 bg-yellow-500"></div>
+                <div class="p-6">
+                    <h3 class="text-lg md:text-xl font-bold text-slate-800 dark:text-white mb-2">فئة تطوير الذات</h3>
+                    <p class="text-xs text-yellow-600 dark:text-yellow-400 mb-4 font-mono font-bold">YOUTUBE & PODCAST</p>
+                    <div class="bg-slate-50 dark:bg-slate-900 p-3 rounded text-sm italic text-slate-600 dark:text-gray-300 mb-4 border dark:border-0 border-slate-100">
+                        "عقلية هذا الرجل تدرس. #نتعلم_منك الإصرار رغم كل الظروف في الغربة."
+                    </div>
+                    <p class="text-xs text-slate-400 dark:text-gray-500">الهدف: التحفيز والإلهام.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Content Strategy (The Syllabus) -->
+    <div class="slide" id="slide-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 h-full max-w-6xl mx-auto items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-800 dark:text-gold-400">خطة المحتوى: "المقرر الدراسي"</h2>
+                <p class="text-slate-600 dark:text-gray-300 mb-6 text-sm md:text-base">
+                    بدلاً من نشر "إعلانات" تقليدية، سننشر مقاطع قصيرة تحت عناوين دروس تعالج مشاكل يواجهها الناس اليوم.
+                </p>
+                <div class="space-y-4">
+                    <div class="lesson-card p-4 rounded-lg bg-white dark:bg-slate-800 shadow-sm border-r-4 border-gold-500 flex items-center gap-4">
+                        <img src="nabil.png" class="w-12 h-12 rounded-full object-cover opacity-80" onerror="this.style.display='none'">
+                        <div>
+                            <h4 class="font-bold text-slate-800 dark:text-gold-400">الدرس الأول: الغربة</h4>
+                            <p class="text-xs md:text-sm text-slate-600 dark:text-gray-300">مقطع يتحدث فيه عن شعوره أول يوم وصل فيه الكويت، وكيف تحول من غريب إلى قائد سوق.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-card p-4 rounded-lg bg-white dark:bg-slate-800 shadow-sm border-r-4 border-red-500 flex items-center gap-4">
+                        <img src="nabil.png" class="w-12 h-12 rounded-full object-cover opacity-80 grayscale" onerror="this.style.display='none'">
+                        <div>
+                            <h4 class="font-bold text-red-600 dark:text-red-400">الدرس الثاني: الفقد</h4>
+                            <p class="text-xs md:text-sm text-slate-600 dark:text-gray-300">مقطع صامت مع موسيقى ومؤثرة ونظرته لصور عائلته القديمة.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-card p-4 rounded-lg bg-white dark:bg-slate-800 shadow-sm border-r-4 border-blue-500 flex items-center gap-4">
+                         <img src="nabil.png" class="w-12 h-12 rounded-full object-cover opacity-80 sepia" onerror="this.style.display='none'">
+                        <div>
+                            <h4 class="font-bold text-blue-600 dark:text-blue-400">الدرس الثالث: القرار</h4>
+                            <p class="text-xs md:text-sm text-slate-600 dark:text-gray-300">مقطع سريع وقوي (Fast-paced) يظهر حدته في اتخاذ القرارات التجارية.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-100 dark:bg-slate-800 p-8 rounded-2xl text-center border border-slate-200 dark:border-slate-600 relative overflow-hidden shadow-lg mt-8 md:mt-0">
+                <div class="absolute top-0 left-0 bg-gold-500 text-white dark:text-black font-bold px-3 py-1 rounded-br-lg text-sm z-10">Call to Action</div>
+                <!-- Background Image Low Opacity -->
+                <img src="nabil.png" class="absolute inset-0 w-full h-full object-cover opacity-5 dark:opacity-10" alt="">
+                
+                <h3 class="text-xl md:text-2xl font-bold mb-4 relative z-10 text-slate-800 dark:text-white">الهاشتاج الرسمي</h3>
+                <div class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-2 tracking-wider relative z-10">#نتعلم_منك</div>
+                <p class="text-sm text-slate-600 dark:text-gray-400 mt-4 relative z-10">
+                    "شاركونا.. مين الشخص اللي غير حياتكم وتقولوا له #نتعلم_منك؟"
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: The "Offline" Experience -->
+    <div class="slide" id="slide-5">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-slate-800 dark:text-gold-400 text-center">التجربة الميدانية: فصول الحكمة</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+            
+            <!-- Cinema Activation -->
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border-b-4 border-gold-500 shadow-md">
+                <h3 class="text-xl md:text-2xl font-bold mb-3 text-slate-800 dark:text-white">1. تجربة السينما</h3>
+                <p class="text-slate-600 dark:text-gray-300 mb-4 text-sm">
+                    العرض الأول في الكويت والأردن لن يكون مجرد سجادة حمراء.
+                </p>
+                <ul class="list-disc list-inside text-sm text-slate-500 dark:text-gray-400 space-y-2">
+                    <li>توزيع "دفتر ملاحظات فاخر" (Notebook) يحمل اسم "نتعلم منك" وقلم فخم.</li>
+                    <li>رسالة: "سجل ما يلهمك".</li>
+                    <li>بعد الفيلم: جلسة Q&A مباشرة.</li>
+                </ul>
+            </div>
+
+            <!-- OOH Strategy -->
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border-b-4 border-blue-500 shadow-md">
+                <h3 class="text-xl md:text-2xl font-bold mb-3 text-slate-800 dark:text-white">2. شوارع تتحدث</h3>
+                <p class="text-slate-600 dark:text-gray-300 mb-4 text-sm">
+                    إعلانات الطرق في شارع الخليج (الكويت) وعبدون (الأردن).
+                </p>
+                <ul class="list-disc list-inside text-sm text-slate-500 dark:text-gray-400 space-y-2">
+                    <li>التصميم: بسيط جداً. خلفية سوداء/بيضاء حسب التباين.</li>
+                    <li>النص: جملة واحدة حكيمة من الفيلم + #نتعلم_منك.</li>
+                    <li>مثال: "جمعت المال.. لكن هل جمعت الذكريات؟"</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Digital Ecosystem (Website) - Updated Icons -->
+    <div class="slide" id="slide-6">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-slate-800 dark:text-gold-400 text-center">المنصة الرقمية: أرشيف الحكمة</h2>
+        <div class="max-w-4xl mx-auto bg-white dark:bg-slate-800 rounded-xl p-8 border border-slate-200 dark:border-slate-700 flex flex-col items-center relative overflow-hidden shadow-lg">
+            <img src="logo.png" class="absolute -right-10 top-10 w-48 md:w-64 opacity-5 rotate-45" alt="">
+
+            <h3 class="text-xl md:text-2xl font-bold text-slate-800 dark:text-white mb-4 z-10">الموقع: Nat3alamMink.com</h3>
+            <p class="text-center text-slate-600 dark:text-gray-300 mb-8 max-w-2xl relative z-10 text-sm md:text-base">
+                لن يكون مجرد موقع للفيلم. سيكون منصة تفاعلية.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full relative z-10">
+                <!-- Watch -->
+                <div class="text-center p-6 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-gold-500 hover:shadow-lg transition group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto mb-4 text-gold-500 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h4 class="font-bold text-lg text-slate-800 dark:text-white mb-1">المشاهدة</h4>
+                    <p class="text-xs text-slate-500">رابط الفيلم (بعد السينما)</p>
+                </div>
+                
+                <!-- Quotes -->
+                <div class="text-center p-6 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-gold-500 hover:shadow-lg transition group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto mb-4 text-gold-500 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    <h4 class="font-bold text-lg text-slate-800 dark:text-white mb-1">الأقوال المأثورة</h4>
+                    <p class="text-xs text-slate-500">تصاميم جاهزة للمشاركة</p>
+                </div>
+
+                <!-- Message -->
+                <div class="text-center p-6 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-gold-500 hover:shadow-lg transition group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto mb-4 text-gold-500 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+                    </svg>
+                    <h4 class="font-bold text-lg text-slate-800 dark:text-white mb-1">رسالة له</h4>
+                    <p class="text-xs text-slate-500">مساحة للكتابة عما تعلموه</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Timeline -->
+    <div class="slide" id="slide-7">
+        <h2 class="text-3xl md:text-4xl font-bold mb-10 text-slate-800 dark:text-gold-400 text-center">الجدول الزمني: رحلة التعلم</h2>
+        <div class="max-w-5xl mx-auto space-y-4 md:space-y-6">
+            
+            <div class="flex flex-col md:flex-row gap-4 items-center bg-white dark:bg-slate-800/50 p-6 rounded-lg border-r-4 border-slate-400 shadow-sm">
+                <div class="w-full md:w-1/4 font-bold text-xl text-slate-400">المرحلة 1: السؤال</div>
+                <div class="w-full md:w-3/4">
+                    <h4 class="text-lg font-bold text-slate-800 dark:text-white mb-1">ما الذي فاتنا؟ (Teasing)</h4>
+                    <p class="text-sm text-slate-600 dark:text-gray-400">إطلاق هاشتاج #نتعلم_منك مع فيديوهات غامضة لشباب يتحدثون عن أخطائهم، دون ذكر الفيلم.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-4 items-center bg-white dark:bg-slate-800 p-6 rounded-lg border-r-4 border-gold-500 transform md:scale-105 shadow-xl ring-1 ring-slate-200 dark:ring-0">
+                <div class="w-full md:w-1/4 font-bold text-xl text-gold-600 dark:text-gold-500">المرحلة 2: الإجابة</div>
+                <div class="w-full md:w-3/4">
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">إطلاق الوثائقي (Launch)</h4>
+                    <p class="text-sm text-slate-600 dark:text-gray-300">الكشف أن الإجابة عند هذا الرجل. العرض الأول. حملة المؤثرين الكبرى.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-4 items-center bg-white dark:bg-slate-800/50 p-6 rounded-lg border-r-4 border-blue-500 shadow-sm">
+                <div class="w-full md:w-1/4 font-bold text-xl text-blue-600 dark:text-blue-400">المرحلة 3: التطبيق</div>
+                <div class="w-full md:w-3/4">
+                    <h4 class="text-lg font-bold text-slate-800 dark:text-white mb-1">تطبيق الدروس (Legacy)</h4>
+                    <p class="text-sm text-slate-600 dark:text-gray-400">تحويل مقاطع الفيديو إلى "Reels" قصيرة تنتشر بشكل دائم كنصائح بزنس.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Budget (Updated Percentages) -->
+    <div class="slide" id="slide-8">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-slate-800 dark:text-gold-400 text-center">الميزانية: الاستثمار في الأثر</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl text-center shadow-md border border-slate-100 dark:border-slate-700">
+                <span class="block text-3xl font-bold text-blue-500 mb-2">45%</span>
+                <span class="block font-bold text-slate-800 dark:text-white">الإعلان الرقمي</span>
+                <span class="text-xs text-slate-500 block mt-2">Paid Media (KSA, EG, JO, KW)</span>
+            </div>
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl text-center shadow-md border border-slate-100 dark:border-slate-700">
+                <span class="block text-3xl font-bold text-green-500 mb-2">35%</span>
+                <span class="block font-bold text-slate-800 dark:text-white">فعاليات الإطلاق</span>
+                <span class="text-xs text-slate-500 block mt-2">السينما وتجهيزات القاعات</span>
+            </div>
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl text-center shadow-md border border-slate-100 dark:border-slate-700">
+                <span class="block text-3xl font-bold text-gold-500 mb-2">10%</span>
+                <span class="block font-bold text-slate-800 dark:text-white">هدايا المؤثرين</span>
+                <span class="text-xs text-slate-500 block mt-2">صناديق "نتعلم منك" الفاخرة</span>
+            </div>
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-xl text-center shadow-md border border-slate-100 dark:border-slate-700">
+                <span class="block text-3xl font-bold text-purple-500 mb-2">10%</span>
+                <span class="block font-bold text-slate-800 dark:text-white">إنتاج المحتوى</span>
+                <span class="text-xs text-slate-500 block mt-2">مونتاج وتصميم</span>
+            </div>
+        </div>
+        <!-- Budget proposal text removed as requested -->
+    </div>
+
+    <!-- Slide 9: Conclusion -->
+    <div class="slide items-center text-center" id="slide-9">
+        <div class="max-w-3xl mx-auto relative px-4">
+            <h2 class="text-4xl md:text-6xl font-black mb-6 text-slate-900 dark:text-white">#نتعلم_منك</h2>
+            <p class="text-xl md:text-2xl leading-relaxed text-slate-600 dark:text-gray-300 mb-8">
+                هذه ليست قصة رجل أعمال فقط..<br>
+                هذه <span class="text-gold-600 dark:text-gold-500">خارطة طريق</span> لكل شاب عربي طموح.
+            </p>
+            <div class="flex justify-center items-center gap-6">
+                <!-- Footer Images -->
+                <img src="logo.png" alt="Logo" class="w-16 h-16 md:w-20 md:h-20 opacity-70 grayscale hover:grayscale-0 transition duration-300 object-contain" onerror="this.src='https://via.placeholder.com/100'">
+                <div class="w-px h-12 bg-slate-300 dark:bg-slate-700"></div>
+                <img src="nabil.png" alt="Nabil" class="profile-img w-16 h-16 md:w-20 md:h-20 rounded-full grayscale hover:grayscale-0 transition duration-300 bg-slate-200 dark:bg-slate-800" onerror="this.src='https://via.placeholder.com/100'">
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright Footer -->
+    <div class="fixed bottom-1 left-0 w-full text-center z-40 pointer-events-none">
+        <p class="text-[10px] md:text-xs text-slate-400 dark:text-slate-600 font-sans opacity-70">
+            Copyrights to The Digital Campus Co. 2026
+        </p>
+    </div>
+
+    <!-- Navigation Controls (Fixed Bottom) -->
+    <div class="fixed bottom-0 w-full p-4 flex justify-between items-center z-50 pointer-events-none">
+        <button class="pointer-events-auto bg-white/90 dark:bg-slate-800/90 backdrop-blur border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-white px-6 py-3 rounded-full shadow-lg hover:bg-gold-400 hover:text-black hover:border-gold-400 transition transform active:scale-95 flex items-center gap-2" onclick="prevSlide()">
+            <span>السابق</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </button>
+        
+        <button class="pointer-events-auto bg-gold-500 text-white dark:text-black font-bold px-6 py-3 rounded-full shadow-lg hover:bg-gold-400 transition transform active:scale-95 flex items-center gap-2" onclick="nextSlide()">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            <span>التالي</span>
+        </button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 9;
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Check Local Storage on Load
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+        }
+
+        function showSlide(n) {
+            // Smooth scroll to top when changing slide
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            document.querySelectorAll('.slide').forEach(s => {
+                s.classList.remove('active-slide');
+                s.style.display = 'none';
+            });
+            const slide = document.getElementById(`slide-${n}`);
+            slide.style.display = 'flex';
+            
+            // Trigger reflow
+            void slide.offsetWidth; 
+            
+            slide.classList.add('active-slide');
+            document.getElementById('slide-counter').innerText = `${n} / ${totalSlides}`;
+        }
+
+        function nextSlide() { if (currentSlide < totalSlides) { currentSlide++; showSlide(currentSlide); } }
+        function prevSlide() { if (currentSlide > 1) { currentSlide--; showSlide(currentSlide); } }
+        
+        showSlide(1);
+        
+        document.addEventListener('keydown', function(e) {
+            if(e.key === "ArrowRight") nextSlide();
+            if(e.key === "ArrowLeft") prevSlide();
+        });
+    </script>
+</body>
+</html>
