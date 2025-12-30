@@ -80,8 +80,8 @@
     <!-- Navbar / Header -->
     <div class="fixed top-0 w-full p-4 flex justify-between items-center z-50 bg-white/80 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors">
         <div class="flex items-center gap-3">
-             <!-- Small Logo in Header -->
-             <img src="logo.png" onerror="this.style.display='none'" class="h-8 w-auto" alt="Logo">
+             <!-- Small Profile Image in Header instead of Logo -->
+             <img src="nabil.png" onerror="this.style.display='none'" class="h-10 w-10 rounded-full object-cover border-2 border-gold-400/30" alt="Nabil">
              <div class="text-lg md:text-xl font-bold text-slate-800 dark:text-gold-400">
                 وثائقي: <span class="hidden md:inline">نتعلم منك</span>
             </div>
@@ -304,7 +304,7 @@
         </div>
     </div>
 
-    <!-- Slide 6: Digital Ecosystem (Website) -->
+    <!-- Slide 6: Digital Ecosystem (Website) - Updated Icons -->
     <div class="slide" id="slide-6">
         <h2 class="text-3xl md:text-4xl font-bold mb-8 text-slate-800 dark:text-gold-400 text-center">المنصة الرقمية: أرشيف الحكمة</h2>
         <div class="max-w-4xl mx-auto bg-white dark:bg-slate-800 rounded-xl p-8 border border-slate-200 dark:border-slate-700 flex flex-col items-center relative overflow-hidden shadow-lg">
@@ -314,20 +314,32 @@
             <p class="text-center text-slate-600 dark:text-gray-300 mb-8 max-w-2xl relative z-10 text-sm md:text-base">
                 لن يكون مجرد موقع للفيلم. سيكون منصة تفاعلية.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full relative z-10">
-                <div class="text-center p-4 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-gold-500 transition">
-                    <div class="text-gold-500 text-3xl mb-2">📺</div>
-                    <h4 class="font-bold text-slate-800 dark:text-white">المشاهدة</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full relative z-10">
+                <!-- Watch -->
+                <div class="text-center p-6 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-gold-500 hover:shadow-lg transition group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto mb-4 text-gold-500 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h4 class="font-bold text-lg text-slate-800 dark:text-white mb-1">المشاهدة</h4>
                     <p class="text-xs text-slate-500">رابط الفيلم (بعد السينما)</p>
                 </div>
-                <div class="text-center p-4 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-gold-500 transition">
-                    <div class="text-gold-500 text-3xl mb-2">📖</div>
-                    <h4 class="font-bold text-slate-800 dark:text-white">الأقوال المأثورة</h4>
+                
+                <!-- Quotes -->
+                <div class="text-center p-6 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-gold-500 hover:shadow-lg transition group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto mb-4 text-gold-500 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    <h4 class="font-bold text-lg text-slate-800 dark:text-white mb-1">الأقوال المأثورة</h4>
                     <p class="text-xs text-slate-500">تصاميم جاهزة للمشاركة</p>
                 </div>
-                <div class="text-center p-4 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-gold-500 transition">
-                    <div class="text-gold-500 text-3xl mb-2">✉️</div>
-                    <h4 class="font-bold text-slate-800 dark:text-white">رسالة له</h4>
+
+                <!-- Message -->
+                <div class="text-center p-6 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-gold-500 hover:shadow-lg transition group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto mb-4 text-gold-500 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+                    </svg>
+                    <h4 class="font-bold text-lg text-slate-800 dark:text-white mb-1">رسالة له</h4>
                     <p class="text-xs text-slate-500">مساحة للكتابة عما تعلموه</p>
                 </div>
             </div>
